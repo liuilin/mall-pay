@@ -5,10 +5,11 @@ import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 
 /**
- * @author liuqiang
- * @date 2022/07/27
+ * goods category
+ *
+ * @author Daniel Liu
+ * @date 2022-07-28
  */
-@Mapper
 public interface CategoryMapper {
 
     /**
@@ -19,5 +20,17 @@ public interface CategoryMapper {
      */
     @Select("select * from mall_category where id = #{id}")
     Category findById(Integer id);
+
+    int deleteByPrimaryKey(Integer id);
+
+    int insert(Category record);
+
+    int insertSelective(Category record);
+
+    Category selectByPrimaryKey(Integer id);
+
+    int updateByPrimaryKeySelective(Category record);
+
+    int updateByPrimaryKey(Category record);
 
 }

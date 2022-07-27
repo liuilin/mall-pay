@@ -7,7 +7,8 @@ spring:
 mybatis:
   configuration:
     map-underscore-to-camel-case: true
+  # 执行 SQL 查询操作时，让 dao 的 mapper 能找到 resources - mapper 的 *Mapper.xml 文件
+  mapper-locations: classpath:mapper/*.xml
 logging:
   pattern:
     console: "[%thread] %-5level %logger{36} : %msg%n"
-#  mapper-locations: classpath:mappers/*.xml
