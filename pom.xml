@@ -11,8 +11,8 @@
   <groupId>com.liumulin</groupId>
   <artifactId>mall</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  <name>mall-pay</name>
-  <description>mall-pay</description>
+  <name>mall</name>
+  <description>mall</description>
   <properties>
     <java.version>1.8</java.version>
   </properties>
