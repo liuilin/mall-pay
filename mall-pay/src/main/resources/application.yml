@@ -1,1 +1,27 @@
-
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: 123456
+    url: jdbc:mysql://127.0.0.1:3306/mall?characterEncoding=utf-8&useSSL=false # 加编码防止乱码；useSSL 配置避免控制台警告
+  freemarker:
+    template-loader-path: classpath:/templates
+    suffix: .ftl
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
+  # 执行 SQL 查询操作时，让 dao 的 mapper 能找到 resources - mapper 的 *Mapper.xml 文件
+  mapper-locations: classpath:mapper/*.xml
+logging:
+  pattern:
+    console: "[%thread] %-5level %logger{36} : %msg%n"
+wx:
+  pay:
+    appId: wx924ac7ff0fa200d0
+    mchId: 1614031817
+    mchKey: 51EE4623B9CF56AAEB0291303BF1BBC36D9DC7F8
+    subAppId:
+    subMchId:
+    apiv3-key: 0139a6d9e93fb88d3d68e0a8a1b06bd6
+    private-key-path: C:\Users\Daniel\GitHub\mall\mall-pay\src\main\resources\cert\apiclient_key.pem
+    private-cert-path: C:\Users\Daniel\GitHub\mall\mall-pay\src\main\resources\cert\apiclient_cert.pem
