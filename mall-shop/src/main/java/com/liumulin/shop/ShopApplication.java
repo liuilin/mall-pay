@@ -7,10 +7,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @author Daniel
  */
 @SpringBootApplication
-public class MallShopApplication {
+public class ShopApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(MallShopApplication.class, args);
+        SpringApplication.run(ShopApplication.class, args);
     }
 
 }
