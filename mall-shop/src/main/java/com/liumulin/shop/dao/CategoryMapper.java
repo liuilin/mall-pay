@@ -1,7 +1,6 @@
-package com.liumulin.mall.dao;
+package com.liumulin.shop.dao;
 
-import com.liumulin.mall.pojo.Category;
-import org.apache.ibatis.annotations.Mapper;
+import com.liumulin.shop.pojo.Category;
 import org.apache.ibatis.annotations.Select;
 
 /**

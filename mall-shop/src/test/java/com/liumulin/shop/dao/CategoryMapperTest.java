@@ -1,6 +1,6 @@
-package com.liumulin.mall.dao;
+package com.liumulin.shop.dao;
 
-import com.liumulin.mall.pojo.Category;
+import com.liumulin.shop.pojo.Category;
 import javax.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Assertions;
@@ -14,7 +14,7 @@ import org.springframework.boot.test.context.SpringBootTest;
  */
 @Slf4j
 @SpringBootTest
-@MapperScan(basePackages = "com.liumulin.mall.dao")
+@MapperScan(basePackages = "com.liumulin.shop.dao")
 public class CategoryMapperTest {
 
     @Resource
