@@ -20,14 +20,6 @@ public class CategoryMapperTest {
     @Resource
     private CategoryMapper categoryMapper;
 
-//    @org.junit.BeforeClass
-//    public static void setUpMybatisDatabase() {
-//        SqlSessionFactory builder = new SqlSessionFactoryBuilder().build(
-//                CategoryMapperTest.class.getClassLoader().getResourceAsStream("mybatisTestConfiguration/CategoryMapperTestConfiguration.xml"));
-//        //you can use builder.openSession(false) to not commit to database
-//        mapper = builder.getConfiguration().getMapper(CategoryMapper.class, builder.openSession(true));
-//    }
-
     @Test
     void findById() {
         Category category = categoryMapper.findById(100001);
