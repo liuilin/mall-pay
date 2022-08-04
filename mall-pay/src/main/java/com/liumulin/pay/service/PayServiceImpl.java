@@ -1,5 +1,6 @@
 package com.liumulin.pay.service;
 
+import com.github.binarywang.wxpay.bean.notify.WxPayOrderNotifyV3Result;
 import com.github.binarywang.wxpay.bean.request.WxPayUnifiedOrderV3Request;
 import com.github.binarywang.wxpay.bean.request.WxPayUnifiedOrderV3Request.Amount;
 import com.github.binarywang.wxpay.bean.result.WxPayUnifiedOrderV3Result;
@@ -33,7 +34,7 @@ public class PayServiceImpl implements IPayService {
         wxPayUnifiedOrderV3Request.setDescription("nice fucked!");
         wxPayUnifiedOrderV3Request.setOutTradeNo(orderId);
         wxPayUnifiedOrderV3Request.setAttach("attach json body");
-        wxPayUnifiedOrderV3Request.setNotifyUrl("https://liumulin.com");
+        wxPayUnifiedOrderV3Request.setNotifyUrl("https://liumulin.com"); // TODO 改为花生壳
         Amount amount1 = new Amount();
         amount1.setTotal(amount.intValue());
         amount1.setCurrency("CNY");
@@ -46,5 +47,28 @@ public class PayServiceImpl implements IPayService {
         } catch (WxPayException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    /**
+     * @param notifyData 微信回调内容
+     * @return 应答微信，告诉微信不要再通知了
+     */
+    @Override
+    public String asyncNotify(String notifyData) {
+        log.info("notifyData = {}", notifyData);
+        //1. 签名校验
+        try {
+            WxPayOrderNotifyV3Result wxPayOrderNotifyV3Result = wxPayService.parseOrderNotifyV3Result(notifyData, null);
+            log.info("wxPayOrderNotifyV3Result = {}", wxPayOrderNotifyV3Result);
+        } catch (WxPayException e) {
+            throw new RuntimeException(e);
+        }
+        //2. 金额校验（从数据库查订单）
+        //3，修改订单支付状态
+        //4，告诉微信不要再通知了
+        return "{  \n"
+                + "    \"code\": \"SUCCESS\",\n"
+                + "    \"message\": \"成功\"\n"
+                + "}";
     }
 }

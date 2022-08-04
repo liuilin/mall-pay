@@ -20,4 +20,5 @@ public interface IPayService {
      */
     WxPayUnifiedOrderV3Result nativePay(String orderId, BigDecimal amount);
 
+    String asyncNotify(String notifyData);
 }
