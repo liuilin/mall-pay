@@ -15,6 +15,7 @@
   <name>mall</name>
   <description>mall</description>
   <modules>
+    <module>mall-pay</module>
     <module>mall-shop</module>
   </modules>
   <properties>
