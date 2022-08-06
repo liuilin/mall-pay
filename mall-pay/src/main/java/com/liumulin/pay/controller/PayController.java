@@ -9,7 +9,10 @@ import java.util.Map;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 /**
@@ -32,10 +35,10 @@ public class PayController {
         map.put("codeUrl", wxPayUnifiedOrderV3Result.getCodeUrl());
         return new ModelAndView("wxNativePay", map);
     }
-    
+
     @PostMapping("/notify")
     @ResponseBody
-    public String asyncNotify(String notifyData){
+    public String asyncNotify(String notifyData) {
         return payService.asyncNotify(notifyData);
     }
 }
