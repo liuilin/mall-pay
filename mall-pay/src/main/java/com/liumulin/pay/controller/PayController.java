@@ -41,4 +41,5 @@ public class PayController {
     public String asyncNotify(String notifyData) {
         return payService.asyncNotify(notifyData);
     }
+
 }
